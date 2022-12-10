@@ -27,7 +27,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw
     }
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc03.in")
+        val f = File("src/2022/inputs/day03.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
         val backpacks = mutableListOf<String>()

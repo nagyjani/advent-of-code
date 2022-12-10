@@ -33,7 +33,7 @@ class Day06 {
     }
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc06.in")
+        val f = File("src/2022/inputs/day06.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
 

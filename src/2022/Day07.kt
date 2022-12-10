@@ -89,7 +89,7 @@ ${'$'} ls
     """.trimIndent()
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc07.in")
+        val f = File("src/2022/inputs/day07.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
 

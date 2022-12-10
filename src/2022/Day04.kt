@@ -19,7 +19,7 @@ class Day04 {
 
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc04.in")
+        val f = File("src/2022/inputs/day04.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
         val ranges = mutableListOf<Pair<Pair<Int, Int>,Pair<Int, Int>>>()

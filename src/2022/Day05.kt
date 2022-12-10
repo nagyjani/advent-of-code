@@ -23,7 +23,7 @@ move 1 from 1 to 2
 
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc05.in")
+        val f = File("src/2022/inputs/day05.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
 
