@@ -3,11 +3,11 @@ import java.lang.Integer.max
 import java.util.*
 
 fun main() {
-    Day2208().solve()
+    Day08().solve()
 }
 
 
-class Day2208 {
+class Day08 {
 
     val input1 = """
         30373
@@ -79,7 +79,7 @@ class Day2208 {
     }
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc2208.in")
+        val f = File("src/2022/inputs/aoc08.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
 

@@ -2,11 +2,11 @@ import java.io.File
 import java.util.*
 
 fun main() {
-    Day2203().solve()
+    Day03().solve()
 }
 
 
-class Day2203 {
+class Day03 {
 
     val input1 = """
 vJrwpWtwJgWrhcsFMMfFFhFp
@@ -27,7 +27,7 @@ CrZsJsPPZsGzwwsLwLmpwMDw
     }
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc2203.in")
+        val f = File("src/2022/inputs/aoc03.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
         val backpacks = mutableListOf<String>()

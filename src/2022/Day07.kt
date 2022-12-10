@@ -2,11 +2,11 @@ import java.io.File
 import java.util.*
 
 fun main() {
-    Day2207().solve()
+    Day07().solve()
 }
 
 
-class Day2207 {
+class Day07 {
 
     data class Node (
         val name: String,
@@ -89,7 +89,7 @@ ${'$'} ls
     """.trimIndent()
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc2207.in")
+        val f = File("src/2022/inputs/aoc07.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
 

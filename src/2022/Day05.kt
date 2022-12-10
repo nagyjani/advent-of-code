@@ -2,11 +2,11 @@ import java.io.File
 import java.util.*
 
 fun main() {
-    Day2205().solve()
+    Day05().solve()
 }
 
 
-class Day2205 {
+class Day05 {
 
     val input1 = """
     [D]    
@@ -23,7 +23,7 @@ move 1 from 1 to 2
 
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc2205.in")
+        val f = File("src/2022/inputs/aoc05.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
 

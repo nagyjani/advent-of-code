@@ -38,7 +38,7 @@ C Z
     }
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc2202.in")
+        val f = File("src/2022/inputs/aoc02.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
         val matches = mutableListOf<Pair<Int, Int>>()

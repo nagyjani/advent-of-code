@@ -2,11 +2,11 @@ import java.io.File
 import java.util.*
 
 fun main() {
-    Day2204().solve()
+    Day04().solve()
 }
 
 
-class Day2204 {
+class Day04 {
 
     val input1 = """
 2-4,6-8
@@ -19,7 +19,7 @@ class Day2204 {
 
 
     fun solve() {
-        val f = File("src/2022/inputs/aoc2204.in")
+        val f = File("src/2022/inputs/aoc04.in")
         val s = Scanner(f)
 //                val s = Scanner(input1)
         val ranges = mutableListOf<Pair<Pair<Int, Int>,Pair<Int, Int>>>()
