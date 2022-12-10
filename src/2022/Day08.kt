@@ -1,3 +1,5 @@
+package `2022`
+
 import java.io.File
 import java.lang.Integer.max
 import java.util.*
