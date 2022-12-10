@@ -1,6 +1,6 @@
 package `2021`
 
-import util.Point
+import common.Point
 import java.io.File
 import java.util.*
 import kotlin.math.abs

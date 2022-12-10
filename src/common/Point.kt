@@ -1,4 +1,4 @@
-package util
+package common
 data class Point(val x: Int, val y: Int) {
     operator fun compareTo(p: Point): Int {
         if (x < p.x) {
