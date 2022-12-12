@@ -1,6 +1,6 @@
 package common
 
-class Adj2D(val rows: Int, val columns: Int) {
+class Adj2D(val columns: Int, val rows: Int) {
     fun adj4(i: Int): List<Int> {
         val adj = mutableListOf<Int>()
         val c = toColumn(i)
@@ -26,19 +26,19 @@ class Adj2D(val rows: Int, val columns: Int) {
         for (ic in Integer.max(0, c - 1)..Integer.min(columns - 1, c + 1)) {
             for (jr in Integer.max(0, r - 1)..Integer.min(rows - 1, r + 1)) {
                 if (ic!=c || jr!=r) {
-                    adj.add(toIx(jr, ic))
+                    adj.add(toIx(ic, jr))
                 }
             }
         }
         return adj
     }
     fun toRow(i: Int): Int {
-        return i/rows
+        return i/columns
     }
     fun toColumn(i: Int): Int {
-        return i%rows
+        return i%columns
     }
-    fun toIx(r: Int, c: Int): Int {
-        return r*rows+c
+    fun toIx(c: Int, r: Int): Int {
+        return r*columns+c
     }
 }

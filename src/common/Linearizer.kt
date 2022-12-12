@@ -53,7 +53,7 @@ fun Iterable<Offset>.around(ix: Int): Iterable<Int> {
 }
 
 // maybe
-class Offset(val linearizer: Linearizer, val vector: IntArray) {
+class Offset(val linearizer: Linearizer, val vector: IntArray, val wrapAround: Boolean = false) {
     // todo uniform vector
     val linearOffset = linearizer.toIndex(*vector)
 
@@ -101,7 +101,7 @@ class AppliedOffsets(val ix: Int, val offsets: Iterable<Offset>): Iterable<Int> 
             return next!!.also { updateNext() }
         }
 
-        fun updateNext() {
+        private fun updateNext() {
             next = null
             while (next == null && offsetIterator.hasNext()) {
                 next = offsetIterator.next().apply(ix)
