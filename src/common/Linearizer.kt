@@ -1,5 +1,14 @@
 package common
 
+import kotlin.math.sign
+
+// linearizer -> 0..size(ix) -> (x, y, ...)?
+//               x, y, ... -> (0..size(ix))?
+// brick linearizer -> 0..size(ix) -> (x, y, ...)
+//                     x, y, ... -> (0..size(ix))
+// transform -> x, y, ... -> (x1, y1, ...)?
+//              ix -> ix?
+
 class Linearizer(vararg val dimensions: Int) {
 
     val numOfDimensions = dimensions.size
@@ -33,6 +42,10 @@ class Linearizer(vararg val dimensions: Int) {
         return Offset(this, vix)
     }
 
+    fun wrapAroundOffset(vararg vix: Int): Offset {
+        return Offset(this, vix, true)
+    }
+
 //    fun createOffsetIterator(): Offsets {
 //        return Offset
 //    }
@@ -44,7 +57,7 @@ fun <E> List<E>.get(l: Linearizer, vararg coordinates: Int): E {
     return get(l.toIndex(*coordinates))
 }
 
-fun <E> MutableList<E>.set(v: E, l: Linearizer, vararg coordinates: Int): E {
+fun <E> MutableList<E>.set(l: Linearizer, vararg coordinates: Int, v: E): E {
     return set(l.toIndex(*coordinates), v)
 }
 
@@ -55,19 +68,24 @@ fun Iterable<Offset>.around(ix: Int): Iterable<Int> {
 // maybe
 class Offset(val linearizer: Linearizer, val vector: IntArray, val wrapAround: Boolean = false) {
     // todo uniform vector
-    val linearOffset = linearizer.toIndex(*vector)
+//    val linearOffset = linearizer.toIndex(*vector)
+    var coordinates = IntArray(vector.size){0}
 
     fun apply(ix: Int): Int? {
-        var ix1 = ix
+        linearizer.toCoordinates(ix, coordinates)
         for (i in 0 until linearizer.numOfDimensions) {
-            val x = ix1%linearizer.dimensions[i] + vector[i]
-            if (x<0 || x>=linearizer.dimensions[i]) {
-                // todo wraparound
-                return null
+            val d = linearizer.dimensions[i]
+            var x = coordinates[i] + vector[i]
+            while (x < 0 || x >= d) {
+                if (wrapAround) {
+                    x -= x.sign * d
+                } else {
+                    return null
+                }
             }
-            ix1 = ix1/linearizer.dimensions[i]
+            coordinates[i] = x
         }
-        return ix + linearOffset
+        return linearizer.toIndex(*coordinates)
     }
 
     // todo: apply to index (in place)

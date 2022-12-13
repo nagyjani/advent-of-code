@@ -1,6 +1,6 @@
 package `2021`
 
-import common.Linearizer
+import common.*
 import java.io.File
 import java.util.*
 
@@ -74,24 +74,23 @@ class Day15 {
                 l.offset(-1, 0),
                 l.offset(1, 0))
 
-        // FIXME
-//        while (border.isNotEmpty()) {
-//            val minBorderIx = border.minByOrNull { caveRisk[it] }!!
-//            val minBorderRisk = caveRisk[minBorderIx]
-//            if (minBorderIx == finalIx) {
-//                println(minBorderRisk)
-//                break
-//            }
-//            border.remove(minBorderIx)
-//            for (i in neighbours.around(minBorderIx)) {
-//                val newRisk = minBorderRisk + cave[i]
-//                if (caveRisk[i] == -1) {
-//                    caveRisk[i] = newRisk
-//                    border.add(i)
-//                } else if (caveRisk[i] > newRisk) {
-//                    caveRisk[i] = newRisk
-//                }
-//            }
-//        }
+        while (border.isNotEmpty()) {
+            val minBorderIx = border.minByOrNull { caveRisk[it] }!!
+            val minBorderRisk = caveRisk[minBorderIx]
+            if (minBorderIx == finalIx) {
+                println(minBorderRisk)
+                break
+            }
+            border.remove(minBorderIx)
+            for (i in neighbours.around(minBorderIx)) {
+                val newRisk = minBorderRisk + cave[i]
+                if (caveRisk[i] == -1) {
+                    caveRisk[i] = newRisk
+                    border.add(i)
+                } else if (caveRisk[i] > newRisk) {
+                    caveRisk[i] = newRisk
+                }
+            }
+        }
     }
 }
