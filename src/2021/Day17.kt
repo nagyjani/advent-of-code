@@ -33,7 +33,7 @@ class Day17 {
 // vx >= sqrt(2*xmin)-1
 
     fun solve() {
-//        val f = File("src/2021/inputs/day16.in")
+//        val f = File("src/2021/inputs/day17.in")
 //        val s = Scanner(f)
 
         // assuming x>=0 and y<=0
