@@ -374,7 +374,7 @@ class Day23 {
     }
 
     fun solve() {
-//        val f = File("/home/janos/Downloads/aoc23.in1")
+//        val f = File("src/2021/inputs/day23.in")
 //        val s = Scanner(f)
         val s = Scanner(input4)
         s.useDelimiter("[^ABCD]+")

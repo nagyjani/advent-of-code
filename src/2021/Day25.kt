@@ -114,7 +114,7 @@ v.....>
 
 
     fun solve() {
-        val f = File("/home/janos/Downloads/aoc25.in1")
+        val f = File("src/2021/inputs/day25.in")
         val s = Scanner(f)
 //        val s = Scanner(input1)
         var x = 0

@@ -152,7 +152,7 @@ class Day14 {
 
 
     fun solve() {
-        val f = File("/home/janos/Downloads/day14.in")
+        val f = File("src/2022/inputs/day14.in")
         val s = Scanner(f)
 //        val s = Scanner(input1)
         val cave = Cave()

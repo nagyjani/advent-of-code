@@ -257,7 +257,7 @@ class Day16alt {
 
 
     fun solve() {
-        val f = File("/home/janos/Downloads/day16.in")
+        val f = File("src/2022/inputs/day16.in")
         val s = Scanner(f)
 //        val s = Scanner(input1)
 

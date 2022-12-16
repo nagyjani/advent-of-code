@@ -307,7 +307,7 @@ mod w 2
     }
 
     fun solve() {
-        val f = File("/home/janos/Downloads/aoc24.in1")
+        val f = File("src/2021/inputs/day24.in")
         val s = Scanner(f)
 //        val s = Scanner(input1)
         s.useDelimiter("\\s+")
