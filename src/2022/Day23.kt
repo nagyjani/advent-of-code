@@ -147,7 +147,7 @@ class Day23 {
         val startOffset = 1000
         val dimension = 2000
 
-        val f = File("/home/janos/Downloads/day23.in")
+        val f = File("src/2022/inputs/day23.in")
         val s = Scanner(f)
 //        val s = Scanner(input1)
 
