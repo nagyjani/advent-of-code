@@ -20,7 +20,7 @@ class Day07 {
     """.trimIndent()
 
     fun solve() {
-//        val f = File("src/2023/inputs/day03.in")
+//        val f = File("src/2023/inputs/day07.in")
 //        val s = Scanner(f)
         val s = Scanner(input1)
 //        val s = Scanner(input2)
