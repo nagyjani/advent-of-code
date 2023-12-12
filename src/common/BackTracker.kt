@@ -59,6 +59,7 @@ class BackTracker<Solution, N: BackTracker.Node<Solution, N>>(
                 if (childIterationState == ChildIterationState.FINISHED) {
                     return null
                 }
+                childIterationState = ChildIterationState.ONGOING
                 val child = node.nextChild(context)
                 if (child == null) {
                     childIterationState = ChildIterationState.FINISHED
@@ -117,6 +118,8 @@ class BackTracker<Solution, N: BackTracker.Node<Solution, N>>(
                     nodes[currentNodeIx + 1].setNewNode(nextChild)
                 }
                 ++currentNodeIx
+            } else if (currentNodeIx == 0 && currentNode.finished()) {
+                return
             } else {
                 --currentNodeIx
             }
